@@ -8,9 +8,14 @@ header
 	background-image: url("../img/header-banner.jpg")
 	background-size: cover
 	position: relative
+	.logo
+		img
+			width: 100%
+			height: auto
+			max-width: 282px
+			display: block
 	.gallery  /////   SLIDER use (3-modules/_gallery-controller.sass) /////// 
-		+gallery-mixin($homeHeaderHeight)
-		//height: $homeHeaderHeight
+		height: $homeHeaderHeight
 		.item
 			position: absolute
 			top: 0
@@ -133,3 +138,10 @@ header
 			vertical-align: bottom
 			height: 32px
 			width: calc(100% - 200px)
+
+@media all and (max-width: 890px)
+	header
+		.flex--direction
+			flex-direction: column
+		nav ul
+			width: auto
