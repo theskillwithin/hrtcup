@@ -7,6 +7,7 @@ var gulp = require('gulp');
 var jade = require('gulp-jade');
 var pagespeed = require('psi');
 var pug = require('gulp-pug');
+var sass = require('gulp-sass');
 
 // Helper Tasks
 //require('./gulp/tasks/jade.js')(gulp, config, modules);
@@ -51,11 +52,12 @@ gulp.task('pug', function() {
 
 
 gulp.watch(['src/*.pug'],['pug']);
+//gulp.watch(config.sassWatch, ['sass:run']);
 
 //gulp.watch('src/*.jade',['jade']);
 
 gulp.task('default', function () {
-    modules.runSequence(['style', 'javascript', 'html', 'move'], 'serve');
+    modules.runSequence(['style', 'javascript', 'html', 'move'], ['serve', 'sass:watch']);
 });
 
 gulp.task('build', function() {
