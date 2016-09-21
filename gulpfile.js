@@ -1,65 +1,65 @@
-'use strict';
-
-/** @type {GulpConfig} */
-var config = require('./gulp/config.js');
-var modules = require('./gulp/modules.js');
-var gulp = require('gulp');
-var jade = require('gulp-jade');
-var pagespeed = require('psi');
-var pug = require('gulp-pug');
+var gulp = require('gulp'),
+    plumber = require('gulp-plumber'),
+    rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin'),
+    cache = require('gulp-cache');
 var sass = require('gulp-sass');
+var browserSync = require('browser-sync');
 
-// Helper Tasks
-//require('./gulp/tasks/jade.js')(gulp, config, modules);
-require('./gulp/tasks/style.js')(gulp, config, modules);
-require('./gulp/tasks/serve.js')(gulp, config, modules);
-require('./gulp/tasks/html.js')(gulp, config, modules);
-require('./gulp/tasks/move.js')(gulp, config, modules);
-require('./gulp/tasks/javascript.js')(gulp, config, modules);
-// Tasks
-
-// Run PageSpeed Insights
-// Update `url` below to the public URL for your site
-gulp.task('pagespeed', pagespeed.bind(null, {
-  // By default, we use the PageSpeed Insights
-  // free (no API key) tier. You can use a Google
-  // Developer API key if you have one. See
-  // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
-  url: 'https://example.com',
-  strategy: 'mobile'
-}));
-
-gulp.task('pug', function() {
-        gulp.src(['src/**/*.pug','!src/**/_*.pug'])
-        .pipe(pug()) 
-        .pipe(gulp.dest('src')); 
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+       baseDir: "./build"
+    }
+  });
 });
 
-
-// Optimize Images
-//gulp.task('images', function() {
-//  return gulp.src('app/images/**/*')
-//    .pipe($.cache($.imagemin({
-//      progressive: true,
-//      interlaced: true
-//    })))
-//    .pipe(gulp.dest('dist/images'))
-//    .pipe($.size({title: 'images'}));
-//});
-
-
-// run this task by typing in gulp jade in CLI
-
-
-gulp.watch(['src/*.pug'],['pug']);
-//gulp.watch(config.sassWatch, ['sass:run']);
-
-//gulp.watch('src/*.jade',['jade']);
-
-gulp.task('default', function () {
-    modules.runSequence(['style', 'javascript', 'html', 'move'], ['serve', 'sass:watch']);
+gulp.task('bs-reload', function () {
+  browserSync.reload();
 });
 
-gulp.task('build', function() {
-    modules.runSequence(['style', 'javascript', 'html', 'move']);
+gulp.task('images', function(){
+  gulp.src('./src/assets/img/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('./build/assets/img/'));
+});
+
+gulp.task('styles', function(){
+  gulp.src(['./src/assets/css/**/*.sass'])
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    .pipe(sass())
+    .pipe(autoprefixer('last 2 versions'))
+    .pipe(gulp.dest('./build/assets/css/main.css'))
+    .pipe(browserSync.reload({stream:true}))
+});
+
+gulp.task('scripts', function(){
+  return gulp.src('./src/assets/js/**/*.js')
+    .pipe(plumber({
+      errorHandler: function (error) {
+        console.log(error.message);
+        this.emit('end');
+    }}))
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('./build/assets/js/'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/assets/js/'))
+    .pipe(browserSync.reload({stream:true}))
+});
+
+gulp.task('default', ['browser-sync'], function(){
+  gulp.watch("./src/assets/css/**/*.sass", ['styles']);
+  gulp.watch("./src/assets/js/**/*.js", ['scripts']);
+  gulp.watch("*.html", ['bs-reload']);
 });
