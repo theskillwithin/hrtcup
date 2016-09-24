@@ -5,5 +5,10 @@ module.exports = {
     ],
     "rules": {
       semi: [2, "always"]
-    }
+    },
+    "env": {
+            "browser": true,
+            "node": true,
+            "jquery": true
+        }
 };
