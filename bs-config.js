@@ -19,7 +19,7 @@ module.exports = {
             "port": 8080
         }
     },
-    "files": ['dist/**/*.html','dist/assets/**/*.js','dist/assets/img/*', 'dist/assets/css/**/*.css'],
+    "files": ['dist/*'],
     "watchOptions": {},
     "server": {
         "baseDir": "dist/",
