@@ -55,6 +55,22 @@ header
 	nav  ///NAV  [.flex.flex--direction]   ///
 		height: 40px
 
+		.hamburger
+			width: 35px
+			display: none
+			align-items: center
+			span, span:before, span:after
+				content: ""
+				display: block
+				height: 2px
+				width: 35px
+				background: white
+				position: relative
+			span:before
+				top: 10px
+			span:after
+				bottom: 10px
+
 		ul  // [.flex.flex--space-between] //
 			list-style-type: none
 			margin: 0px
@@ -143,5 +159,8 @@ header
 	header
 		.flex--direction
 			flex-direction: column
-		nav ul
-			width: auto
+		nav 
+			.hamburger
+				display: flex
+			ul
+				width: auto
