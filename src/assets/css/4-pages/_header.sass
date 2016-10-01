@@ -177,13 +177,18 @@ header
 
 @media all and (max-width: 890px)
 	header
+		.line
+			display: none
 		.logo
 			min-width: 130px
 		.top 
 			z-index: 99
+			min-height: 46px
+			+transition(all 300ms ease)
 			.container
 				justify-content: space-around
 				align-items: flex-start
+				transition: all 300ms ease
 		.flex--direction
 			flex-direction: column
 		.hamburger
@@ -217,9 +222,10 @@ header
 			position: absolute
 			left: 20px
 			top: 27px
+			max-width: 250px
 		.hamburger
 			position: absolute
-			right: 20px
+			right: 27px
 			top: 27px
 		nav
 			ul

@@ -1,13 +1,5 @@
 $(document).ready(function () {
     var mq = window.matchMedia('(max-width: 890px)');
-
-// function closeMenu () {
-//     $('header nav ul, header nav .user').removeClass('mobile');
-// }
-
-// $(window).on('click', closeMenu);
-// $('header nav .mobile').on('click', closeMenu);
-
     if (mq.matches) {
             $('header nav ul').addClass('mobile');
             $('header nav .user').addClass('mobile');
