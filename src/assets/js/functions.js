@@ -1,5 +1,6 @@
 $(document).ready(function () {
     // owl carousels
+    if (!jQuery.fn.andSelf) { jQuery.fn.andSelf = jQuery.fn.addBack; }  // https://github.com/OwlCarousel2/OwlCarousel2/issues/1441
     $('section#trendingProjects .owl-carousel').owlCarousel({
         itemElement: 'article',
         stageElement: 'div',
