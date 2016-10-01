@@ -49,7 +49,7 @@ $(function () {
                 .add(header.find('.hamburger'))
                     .addClass('mobile')
 
-      $(document).on('click', function (e) {
+      $(document).on('click', function () {
         if (!headerNav.find('ul').hasClass('mobile')) hamburger()
       })
 
