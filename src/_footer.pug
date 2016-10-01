@@ -2,7 +2,7 @@
 	@author Austin
 
 footer
-	.top.container.flex.flex--space-between
+	.top.container.flex.flex--space-between.flex--flex-direction
 		.col-4.about
 			h3 About
 			p Donec rutrum elit ac arcu bibendum rhoncus in vitae turpis. Quisque fermentum gravida eros non faucibus. Curabitur fermentum, arcu sed cursus commodo.
@@ -32,16 +32,16 @@ footer
 					a(href="#") Press
 
 	.bottom
-		.container.flex.flex--align-items.flex--space-between
+		.container.flex.flex--align-items.flex--space-between.flex--flex-direction
 			.col-3
 				include assets/img/footer-logo.svg
 			.col-3
 				span &copy; 2016 Heart Cup. All rights reserved.
 			.col-3.flex.flex--space-between
-				a(href="#") Terms And Conditions
-				||
-				a(href="#").red Privacy Policy
-				||
+				a(href="#") Terms And Conditions &nbsp;
+				||&nbsp;
+				a(href="#").red Privacy Policy &nbsp;
+				||&nbsp;
 				a(href="#") FAQ
 script(src='assets/js/vendor.js')
 script(src='assets/js/app.js')
