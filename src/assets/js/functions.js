@@ -7,10 +7,9 @@ $(function () {
   $('#trendingProjects').find('.owl-carousel').owlCarousel({
     itemElement: 'article',
     loop: true,
-    margin: 35,
+    margin: 20,
     lazyLoad: true,
-    nav: true,
-    autoWidth: true
+    nav: true
   })
 
   var mq = window.matchMedia('(max-width: 890px)')
