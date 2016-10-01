@@ -1,65 +1,67 @@
 $(function () {
-    // owl carousels
-  if (!jQuery.fn.andSelf) {
-    jQuery.fn.andSelf = jQuery.fn.addBack
-  } // https://github.com/OwlCarousel2/OwlCarousel2/issues/1441
+  mobileNav()
+  Owl()
 
-  $('#trendingProjects').find('.owl-carousel').owlCarousel({
-    itemElement: 'article',
-    loop: true,
-    margin: 20,
-    lazyLoad: true,
-    nav: true,
-    autoWidth: true,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      890: {
-        items: 2
-      },
-      1000: {
-        items: 3
-      }
-    }
-  })
+  function Owl () {
+    if (!jQuery.fn.andSelf) {
+      jQuery.fn.andSelf = jQuery.fn.addBack
+    } // https://github.com/OwlCarousel2/OwlCarousel2/issues/1441
 
-  var mq = window.matchMedia('(max-width: 890px)'),
-    header = $('header'),
-    headerNav = header.find('nav'),
-    hamburger
-
-  function headerFire () {
-    headerNav.find('ul, .user')
-                .add(header.find('.hamburger'))
-                    .addClass('mobile')
-
-    $(document).on('click', function (e) {
-      if (!headerNav.find('ul').hasClass('mobile')) {
-        // header.find('.hamburger').trigger('click')
-        hamburger()
+    $('#trendingProjects').find('.owl-carousel').owlCarousel({
+      itemElement: 'article',
+      loop: true,
+      margin: 20,
+      lazyLoad: true,
+      nav: true,
+      autoWidth: true,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        890: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
       }
     })
-
-    header.find('.top').click(function () {
-      return false
-    })
   }
+  function mobileNav () {
+    var mq = window.matchMedia('(max-width: 890px)'),
+      header = $('header'),
+      headerNav = header.find('nav'),
+      hamburger
 
-  if (mq.matches) {
-    headerFire()
-  }
-
-  mq.addListener(function () {
     if (mq.matches) {
       headerFire()
     }
-  })
 
-  header.find('.hamburger').on('click', hamburger = function () {
-    headerNav.find('ul, .user')
+    mq.addListener(function () {
+      if (mq.matches) {
+        headerFire()
+      }
+    })
+
+    function headerFire () {
+      headerNav.find('ul, .user')
+                .add(header.find('.hamburger'))
+                    .addClass('mobile')
+
+      $(document).on('click', function (e) {
+        if (!headerNav.find('ul').hasClass('mobile')) hamburger()
+      })
+
+      header.find('.top').click(function () {
+        return false
+      })
+    }
+
+    header.find('.hamburger').on('click', hamburger = function () {
+      headerNav.find('ul, .user')
             .add(header.find('.hamburger'))
                 .toggleClass('mobile')
-  })
+    })
+  }
 })
