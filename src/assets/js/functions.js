@@ -25,9 +25,10 @@ $(function () {
     }
   })
 
-  var mq = window.matchMedia('(max-width: 890px)')
-  var header = $('header')
-  var headerNav = header.find('nav')
+  var mq = window.matchMedia('(max-width: 890px)'),
+    header = $('header'),
+    headerNav = header.find('nav'),
+    hamburger
 
   function headerFire () {
     headerNav.find('ul, .user')
@@ -36,7 +37,8 @@ $(function () {
 
     $(document).on('click', function (e) {
       if (!headerNav.find('ul').hasClass('mobile')) {
-        header.find('.hamburger').trigger('click')
+        // header.find('.hamburger').trigger('click')
+        hamburger()
       }
     })
 
@@ -55,7 +57,7 @@ $(function () {
     }
   })
 
-  header.find('.hamburger').on('click', function () {
+  header.find('.hamburger').on('click', hamburger = function () {
     headerNav.find('ul, .user')
             .add(header.find('.hamburger'))
                 .toggleClass('mobile')
