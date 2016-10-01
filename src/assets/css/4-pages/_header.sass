@@ -9,6 +9,7 @@ header
 	background-size: cover
 	position: relative
 	.logo
+		flex: 1
 		img
 			width: 100%
 			height: auto
@@ -46,44 +47,49 @@ header
 		background-color: rgba(50, 50, 50, .749)
 		position: absolute
 		top: 0
-		padding: 25px 0px
-		width: 100vw
+		left: 0
+		right: 0
+		padding: 25px 10px
 
+
+	.hamburger
+		flex: 1
+		display: flex
+		justify-content: flex-end
+		width: 35px
+		height: 40px
+		cursor: pointer
+		display: none
+		align-items: center
+		span, span:before, span:after
+			+transition(all 300ms ease)
+			content: ""
+			display: block
+			height: 2px
+			width: 35px
+			background: white
+			position: relative
+			transfor-origin: center
+		span:before
+			top: 10px
+		span:after
+			bottom: 12px
+		&:hover
+			span
+				visibility: hidden
+			span:after
+				transform: rotate(45deg)
+				transfor-origin: center
+				top: -3px
+				visibility: visible
+			span:before
+				transform: rotate(-45deg)
+				transfor-origin: center
+				top: 0px
+				visibility: visible
 	nav  ///NAV  [.flex.flex--direction]   ///
 		height: auto
 
-		.hamburger
-			width: 35px
-			height: 40px
-			cursor: pointer
-			display: none
-			align-items: center
-			span, span:before, span:after
-				+transition(all 300ms ease)
-				content: ""
-				display: block
-				height: 2px
-				width: 35px
-				background: white
-				position: relative
-				transfor-origin: center
-			span:before
-				top: 10px
-			span:after
-				bottom: 12px
-			&:hover
-				span
-					visibility: hidden
-				span:after
-					transform: rotate(45deg)
-					transfor-origin: center
-					top: -3px
-					visibility: visible
-				span:before
-					transform: rotate(-45deg)
-					transfor-origin: center
-					top: 0px
-					visibility: visible
 
 		ul  // [.flex.flex--space-between] //
 			list-style-type: none
@@ -171,14 +177,22 @@ header
 
 @media all and (max-width: 890px)
 	header
-		.top .container
-			justify-content: space-around
+		.logo
+			min-width: 130px
+		.top 
+			z-index: 99
+			.container
+				justify-content: space-around
+				align-items: flex-start
 		.flex--direction
 			flex-direction: column
+		.hamburger
+			display: flex
+			order: 1
+		.mobile
+			order: 2
 		nav 
 			flex-direction: column
-			.hamburger
-				display: flex
 			ul.mobile
 				width: auto
 				display: none
@@ -186,8 +200,34 @@ header
 				text-align: center
 				display: flex
 				justify-content: center
-				// li:last-child
-				// 	order: -2
-				// 	width: 25px
+				max-width: 400px
+				width: 100%
+				//align-self: center
+				li:last-child  // turn into search bar
+					order: -1
+					width: 25px
+					display: none
 			.user.mobile
 				display: none
+			.user
+				align-self: center
+@media all and (max-width: 500px)
+	header
+		.logo
+			position: absolute
+			left: 20px
+			top: 27px
+		.hamburger
+			position: absolute
+			right: 20px
+			top: 27px
+		nav
+			ul
+				margin-top: 49px
+		.top 
+			min-height: 60px
+			.container
+				flex-wrap: wrap
+
+
+
