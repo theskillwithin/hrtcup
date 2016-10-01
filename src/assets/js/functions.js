@@ -29,8 +29,10 @@ $(function () {
   var header = $('header')
   var headerNav = header.find('nav')
 
-  if (mq.matches) {
-    headerNav.find('ul, .user').addClass('mobile')
+  function headerFire () {
+    headerNav.find('ul, .user')
+                .add(header.find('.hamburger'))
+                    .addClass('mobile')
 
     $(document).on('click', function (e) {
       if (!headerNav.find('ul').hasClass('mobile')) {
@@ -43,11 +45,13 @@ $(function () {
     })
   }
 
+  if (mq.matches) {
+    headerFire()
+  }
+
   mq.addListener(function () {
     if (mq.matches) {
-      headerNav.find('ul, .user')
-                .add(header.find('.hamburger'))
-                    .addClass('mobile')
+      headerFire()
     }
   })
 
