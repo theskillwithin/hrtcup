@@ -17,18 +17,9 @@
       "jquery": true
     }
   },
-  "watch": {
-    "build:pug": {
-      "patterns": [
-        "src"
-      ],
-      "extensions": "pug",
-      "quiet": false
-    }
-  },
   "scripts": {
     "pug": "pug src/index.pug --out dist/",
-    "vendorjs": "cat node_modules/jquery/dist/jquery.min.js node_modules/owl.carousel/dist/owl.carousel.min.js > dist/assets/js/vendor.js",
+    "uglifyVendorJs": "mkdir -p dist/assets/js && uglifyjs node_modules/jquery/dist/jquery.js node_modules/owl.carousel/dist/owl.carousel.js --screw-ie8 -m -c -o dist/assets/js/vendor.js",
     "vendorcss": "cp node_modules/node-normalize-scss/_normalize.scss src/assets/css/1-tools/_normalize.scss  && cp node_modules/owl.carousel/dist/assets/owl.carousel.min.css src/assets/css/1-tools/_owl.carousel.min.scss",
     "clean": "rm -f dist/{assets/css/*,js/*,assets/img/*}",
     "autoprefixer": "postcss -u autoprefixer -r dist/assets/css/*.css",
@@ -72,6 +63,6 @@
     "pug": "^2.0.0-beta6",
     "svg-sprite-generator": "0.0.7",
     "svgo": "^0.7.0",
-    "uglify-js": "^2.6.2"
+    "uglify-js": "^2.7.3"
   }
 }

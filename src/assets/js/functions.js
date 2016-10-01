@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    // owl carousels
+    $('section#trendingProjects .owl-carousel').owlCarousel({
+        itemElement: 'article',
+        stageElement: 'div',
+        items: 3
+    });
+
     var mq = window.matchMedia('(max-width: 890px)');
     if (mq.matches) {
             $('header nav ul').addClass('mobile');
