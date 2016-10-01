@@ -6,8 +6,11 @@ $(function () {
 
   $('#trendingProjects').find('.owl-carousel').owlCarousel({
     itemElement: 'article',
-    stageElement: 'div',
-    items: 3
+    loop: true,
+    margin: 35,
+    lazyLoad: true,
+    nav: true,
+    autoWidth: true
   })
 
   var mq = window.matchMedia('(max-width: 890px)')
