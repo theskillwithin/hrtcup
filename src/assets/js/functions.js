@@ -9,7 +9,20 @@ $(function () {
     loop: true,
     margin: 20,
     lazyLoad: true,
-    nav: true
+    nav: true,
+    autoWidth: true,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      890: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
   })
 
   var mq = window.matchMedia('(max-width: 890px)')
