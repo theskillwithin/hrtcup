@@ -78,13 +78,14 @@ body
 				margin-bottom: 5px
 			h4
 				font-size: 22px
-				margin-top: 25px
+				margin-top: 30px
 			p
 				font-size: 16px
 				margin-bottom: 24px
 			&:hover .angled-bottom
-					top: 100px
+					top: 51px
 					height: auto
+					max-height: 420px
 					+animation(angled 200ms ease-in, angled 300ms ease)
 			.angled-bottom
 				background-color: rgba(110, 110, 110, .8)
@@ -92,21 +93,23 @@ body
 				bottom: 0px
 				right: 0px
 				left: 0px
-				height: 135px
+				height: auto
+				max-height: 150px
 				clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%)
-				overflow-y: hidden
-				
+				overflow-y: 
+				+transition(all 300ms ease)
+				//cubic-bezier(0.3, 0.09, 0.41, 1.13)
 				@keyframes angled
 					0%
 						top: 200px
-					10%
+					12%
 						top: 220px
 					95%
-						top: 85px
+						top: 59px
 					98%
-						top: 100px
+						top: 48px
 					100%
-						top: 95px
+						top: 51px
 		.create
 			background-image: url('../img/create.png')
 		.projects

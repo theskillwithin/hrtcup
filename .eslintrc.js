@@ -4,7 +4,8 @@ module.exports = {
         "standard"
     ],
     "rules": {
-      semi: [2, "always"]
+      semi: [1, "always"],
+      indent: [0, "tab"],
     },
     "env": {
             "browser": true,
