@@ -18,6 +18,7 @@
     }
   },
   "scripts": {
+    "gh-pages:": "",
     "pug": "pug src/index.pug --out dist/",
     "uglifyVendorJs": "mkdir -p dist/assets/js && uglifyjs node_modules/jquery/dist/jquery.js node_modules/owl.carousel/dist/owl.carousel.js --screw-ie8 -m -c -o dist/assets/js/vendor.js",
     "vendorcss": "cp node_modules/node-normalize-scss/_normalize.scss src/assets/css/1-tools/_normalize.scss  && cp node_modules/owl.carousel/dist/assets/owl.carousel.min.css src/assets/css/1-tools/_owl.carousel.min.scss",
