@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "styleguide.css",
+	"sources": [
+		"../../../src/assets/css/styleguide.sass"
+	],
+	"mappings": "AAAA,AAEE,MAFI,CACL,GAAG,CACF,EAAE,AAAC,CACF,KAAK,CAAE,KAAM,CAAG",
+	"names": []
+}
