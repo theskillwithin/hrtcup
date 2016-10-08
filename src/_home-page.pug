@@ -9,20 +9,20 @@ main.page-home
 
 			h2.page-title How Heartcup Works 
 
-			.figures
+			.figures.flex.flex--flex-wrap
 
-				figure
+				figure.col-3
 					include assets/img/discover-projects.svg
 					figcaption
 						h3 Discover Projects
 						p Explore the network and discover projects to get invovled with.
-				figure
+				figure.col-3
 					include assets/img/connect-yourself.svg
 					figcaption
 						h3 Connect Yourself
 						p build a unique profile and connect with friends to share the power of giving
 
-				figure
+				figure.col-3
 					include assets/img/fund-projects.svg
 					figcaption
 						h3 Fund Projects
@@ -41,7 +41,7 @@ main.page-home
 
 						div.bottom.flex.flex--space-around
 							.heart
-								img(src="assets/img/heart.svg")
+								include assets/img/heart.svg
 							.stats.flex.flex--space-between
 								.funded
 									p 54%
@@ -71,26 +71,26 @@ main.page-home
 	section#ourCommunity
 		.container
 			h2.page-title Our Community
-			.flex.flex--space-between
-				figure.create
+			.flex.flex--flex-wrap
+				figure.col-4.create
 					.angled-bottom
 						h4 Create
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
-				figure.projects
+				figure.col-4.projects
 					.angled-bottom
 						h4 Projects
 						p Lorem ipsum dolor sit amet, consectetur adipisicing 
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
-				figure.business
+				figure.col-4.business
 					.angled-bottom
 						h4 Business
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
-				figure.charaties
+				figure.col-4.charaties
 					.angled-bottom
 						h4 Charaties
 						p Lorem ipsum dolor sit amet, consectetur adipisicing
