@@ -935,21 +935,6 @@ section {
   padding: 40px;
   position: relative;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); }
-  section .figures {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
-    section .figures figure {
-      margin: 10px; }
-      section .figures figure svg {
-        height: 60px;
-        max-width: 100px; }
   section h1 {
     font-weight: 700;
     line-height: 1;
@@ -1297,6 +1282,13 @@ body {
     margin-bottom: 50px; }
     .page-home article:last-child {
       margin-bottom: 0px; }
+  .page-home section#howHeartcupWorks figure {
+    margin: 10px; }
+    .page-home section#howHeartcupWorks figure svg {
+      height: 60px;
+      width: 60px;
+      max-width: 100px;
+      fill: #a6a6a6; }
   .page-home section#trendingProjects article {
     max-width: 370px;
     background-color: white; }
