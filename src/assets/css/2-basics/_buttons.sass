@@ -21,6 +21,17 @@ input[type="button"]
   cursor: pointer
   box-sizing: border-box
   font-family: 'Proxima Nova Rg'
+  background-color: $blue
+  border: 1px solid $blue
+  border-radius: 4px
+  .red
+    background-color: $red
+    border: 1px solid $red
+    &:hover
+      background-color: darken($red, 5%)
+      border: 1px solid darken($red, 5%)
+  &.square
+    border-radius: 0px
 
   &:hover,
   &:active,
@@ -28,23 +39,9 @@ input[type="button"]
     color: white
     border-color: #888
     outline: 0
+    background-color: darken($blue, 5%)
+    border: 1px solid darken($blue, 5%)
 input
   padding-left: 20px
   color: grey
 
-button
-  background-color: $blue
-  border: 1px solid $blue
-  border-radius: 4px
-  &:hover
-    background-color: darken($blue, 5%)
-    border: 1px solid darken($blue, 5%)
-
-  .red
-    background-color: $red
-    border: 1px solid $red
-    &:hover
-      background-color: darken($red, 5%)
-      border: 1px solid darken($red, 5%)
-  .square
-    border-radius: 0px
