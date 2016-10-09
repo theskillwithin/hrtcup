@@ -677,6 +677,10 @@ hr {
   margin: 10px 0 30px;
   height: 0; }
 
+footer .bottom div {
+  font-size: 13px;
+  font-family: "Proxima Nova"; }
+
 .button,
 button,
 input[type="submit"],
@@ -819,6 +823,41 @@ button {
   top: 0;
   width: 100%;
   left: 0; }
+
+.heart-svg-container {
+  width: 37px; }
+
+.heart-svg {
+  padding: 2px; }
+  .heart-svg path {
+    fill: transparent;
+    stroke: #ee2d3d;
+    stroke-width: 18px;
+    stroke-dasharray: 514.2344970703125px;
+    -webkit-animation: heart 2s ease-in-out infinite alternate;
+            animation: heart 2s ease-in-out infinite alternate; }
+
+@-webkit-keyframes heart {
+  0% {
+    fill: transparent;
+    stroke-dashoffset: -514.2344970703125px; }
+  60% {
+    fill: transparent; }
+  80% {
+    stroke-dashoffset: 0; }
+  100% {
+    fill: #f7515f; } }
+
+@keyframes heart {
+  0% {
+    fill: transparent;
+    stroke-dashoffset: -514.2344970703125px; }
+  60% {
+    fill: transparent; }
+  80% {
+    stroke-dashoffset: 0; }
+  100% {
+    fill: #f7515f; } }
 
 .flex {
   display: -webkit-box;
@@ -1154,10 +1193,11 @@ header {
           flex-wrap: wrap; } }
 
 footer .col-4 {
-  margin-top: 20px; }
+  margin: 10px; }
 
 footer h3 {
-  font-size: 16px; }
+  font-size: 16px;
+  text-align: center; }
 
 footer .top .tweets span.twitterMin {
   color: rgba(92, 102, 107, 0.502);
@@ -1166,10 +1206,7 @@ footer .top .tweets span.twitterMin {
   font-style: italic; }
 
 footer .top .tweets p {
-  margin-bottom: 5px;
-  margin-top: 20px; }
-  footer .top .tweets p:first-of-type {
-    margin-top: 0px; }
+  padding: 10px; }
 
 footer .top input {
   font-size: 13px;
@@ -1187,60 +1224,30 @@ footer .top input {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.39), 0 -1px 1px #FFF, 0 1px 0 #FFF; }
 
 footer .top ul {
-  padding: 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  height: 155px;
-  padding-left: 0;
-  margin-left: 0; }
+  max-height: 220px;
+  padding: 0; }
   footer .top ul li {
     -webkit-box-flex: 1;
-        -ms-flex: 1 0 20%;
-            flex: 1 0 20%;
-    padding: 0px;
-    margin: 0px;
-    margin-right: 10px;
-    list-style: none;
-    width: 100%; }
+        -ms-flex: 1 5em;
+            flex: 1 5em;
+    padding-bottom: 10px;
+    list-style: none; }
     footer .top ul li a {
       color: #636262;
       font-size: 13px;
-      text-align: center;
-      -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1; }
+      font-weight: bold; }
 
 footer .bottom {
   background-color: #eeeeee;
-  border-top: 1px solid #cbcbcb;
-  height: 65px;
-  width: 100%; }
-  footer .bottom .container {
-    height: 100%; }
-    footer .bottom .container div {
-      font-size: 13px;
-      font-family: "Proxima Nova";
-      color: #999999;
-      text-align: center; }
-      footer .bottom .container div svg {
-        vertical-align: middle;
-        float: left; }
-      footer .bottom .container div span {
-        line-height: 3; }
-
-@media all and (max-width: 890px) {
-  footer .flex--flex-direction {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; } }
+  border-top: 1px solid #cbcbcb; }
+  footer .bottom div {
+    color: #999999;
+    text-align: center;
+    max-width: 80vw; }
+    footer .bottom div svg {
+      vertical-align: middle; }
+    footer .bottom div span {
+      line-height: 3; }
 
 body {
   overflow-x: hidden; }
