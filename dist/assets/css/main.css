@@ -714,13 +714,6 @@ input[type="button"] {
   input[type="button"] .red {
     background-color: #ee2d3d;
     border: 1px solid #ee2d3d; }
-    .button .red:hover,
-    button .red:hover,
-    input[type="submit"] .red:hover,
-    input[type="reset"] .red:hover,
-    input[type="button"] .red:hover {
-      background-color: #ec1527;
-      border: 1px solid #ec1527; }
   .button.square,
   button.square,
   input[type="submit"].square,
