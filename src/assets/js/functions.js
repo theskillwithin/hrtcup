@@ -12,6 +12,7 @@ $(function () {
       loop: true,
       margin: 20,
       lazyLoad: true,
+      center: true,
       nav: true,
       autoWidth: true,
       responsiveClass: true,
