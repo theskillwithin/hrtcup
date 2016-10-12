@@ -37,8 +37,8 @@
         navUser.classList.add('mobile')
 
         document.addEventListener('click', function (event) {
-          console.log(event.target)
           if (event.target === top) return
+          if (event.target === top.querySelector('.container')) return
 
           if (!navUl.classList.contains('mobile')) {
             navUl.classList.toggle('mobile')
