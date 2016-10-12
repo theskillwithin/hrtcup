@@ -17,8 +17,9 @@
       var mq = window.matchMedia('(max-width: 890px)'),
         header = document.querySelector('header'),
         headerNav = header.querySelector('nav'),
-        innerNav = headerNav.querySelector('ul, .user'),
-        hamburger = header.querySelector('.hamburger')
+        navUl = headerNav.querySelector('ul'),
+        navUser = headerNav.querySelector('.user'),
+        navHamburger = header.querySelector('.hamburger')
 
       if (mq.matches) {
         headerFire()
@@ -31,11 +32,15 @@
       })
 
       function headerFire () {
-        innerNav.classList.add('mobile')
-        hamburger.classList.add('mobile')
+        navUl.classList.add('mobile')
+        navUser.classList.add('mobile')
 
-        $(document).addEventListener('click', function () {
-          if (!headerNav.querySelector('ul').contains('mobile')) hamburger()
+        document.addEventListener('click', function () {
+          if (!headerNav.querySelector('ul').classList.contains('mobile')) {
+            navUl.classList.toggle('mobile')
+            navUser.classList.toggle('mobile')
+            navHamburger.classList.toggle('mobile')
+          }
         })
 
         header.querySelector('.top').click(function () {
@@ -43,9 +48,10 @@
         })
       }
 
-      header.querySelector('.hamburger').addEventListener('click', hamburger = function () {
-        innerNav.classList.add('mobile')
-        hamburger.classList.add('mobile')
+      navHamburger.addEventListener('click', function () {
+        navUl.classList.toggle('mobile')
+        navUser.classList.toggle('mobile')
+        navHamburger.classList.toggle('mobile')
       })
     }
   }
