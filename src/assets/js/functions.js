@@ -17,7 +17,8 @@
       var mq = window.matchMedia('(max-width: 890px)'),
         header = document.querySelector('header'),
         headerNav = header.querySelector('nav'),
-        hamburger
+        innerNav = headerNav.querySelector('ul, .user'),
+        hamburger = header.querySelector('.hamburger')
 
       if (mq.matches) {
         headerFire()
@@ -30,9 +31,8 @@
       })
 
       function headerFire () {
-        headerNav.querySelector('ul, .user')
-                .add(header.querySelector('.hamburger'))
-                    .add('mobile')
+        innerNav.classList.add('mobile')
+        hamburger.classList.add('mobile')
 
         $(document).addEventListener('click', function () {
           if (!headerNav.querySelector('ul').contains('mobile')) hamburger()
@@ -44,9 +44,8 @@
       }
 
       header.querySelector('.hamburger').addEventListener('click', hamburger = function () {
-        headerNav.querySelector('ul, .user')
-            .add(header.querySelector('.hamburger'))
-                .add('mobile')
+        innerNav.classList.add('mobile')
+        hamburger.classList.add('mobile')
       })
     }
   }
