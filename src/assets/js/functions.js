@@ -12,44 +12,44 @@
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev'
       })
+    },
+    mobileNav: function () {
+      var mq = window.matchMedia('(max-width: 890px)'),
+        header = document.querySelectorAll('header'),
+        headerNav = header.querySelector('nav') !== null,
+        hamburger
+
+      if (mq.matches) {
+        headerFire()
+      }
+
+      mq.addListener(function () {
+        if (mq.matches) {
+          headerFire()
+        }
+      })
+
+      function headerFire () {
+        headerNav.querySelector('ul, .user')
+                .add(header.querySelector('.hamburger'))
+                    .add('mobile')
+
+        $(document).on('click', function () {
+          if (!headerNav.querySelector('ul').contains('mobile')) hamburger()
+        })
+
+        header.querySelector('.top').click(function () {
+          return false
+        })
+      }
+
+      header.querySelector('.hamburger').on('click', hamburger = function () {
+        headerNav.querySelector('ul, .user')
+            .add(header.querySelector('.hamburger'))
+                .add('mobile')
+      })
     }
   }
   hrtcup.runSwiper()
-
-  // function mobileNav () {
-  //   var mq = window.matchMedia('(max-width: 890px)'),
-  //     header = $('header'),
-  //     headerNav = header.find('nav'),
-  //     hamburger
-
-  //   if (mq.matches) {
-  //     headerFire()
-  //   }
-
-  //   mq.addListener(function () {
-  //     if (mq.matches) {
-  //       headerFire()
-  //     }
-  //   })
-
-  //   function headerFire () {
-  //     headerNav.find('ul, .user')
-  //               .add(header.find('.hamburger'))
-  //                   .addClass('mobile')
-
-  //     $(document).on('click', function () {
-  //       if (!headerNav.find('ul').hasClass('mobile')) hamburger()
-  //     })
-
-  //     header.find('.top').click(function () {
-  //       return false
-  //     })
-  //   }
-
-  //   header.find('.hamburger').on('click', hamburger = function () {
-  //     headerNav.find('ul, .user')
-  //           .add(header.find('.hamburger'))
-  //               .toggleClass('mobile')
-  //   })
-  // }
+  hrtcup.mobileNav()
 
