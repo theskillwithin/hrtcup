@@ -1,23 +1,17 @@
-(function () {
   'use strict'
-  // mobileNav()
 
-  function runSwiper () {
-    var mySwiper = new Swiper('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
-      slideClass: '.swiper-slide'
+  var hrtcup = {
+    runSwiper: function () {
+      var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        slideClass: 'swiper-slide',
+        spaceBetween: 10,
+        centeredSlides: true
+      })
+    }
+  }
+  hrtcup.runSwiper()
 
-      // Navigation arrows
-      // nextButton: '.swiper-button-next',
-      // prevButton: '.swiper-button-prev',
-    })
-  }
-  document.onload = function () {
-    console.log('test')
-    runSwiper()
-  }
   // function mobileNav () {
   //   var mq = window.matchMedia('(max-width: 890px)'),
   //     header = $('header'),
@@ -54,4 +48,4 @@
   //               .toggleClass('mobile')
   //   })
   // }
-}())
+

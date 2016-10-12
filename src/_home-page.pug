@@ -33,32 +33,33 @@ main.page-home
 	section#trendingProjects.grey.mFull
 		.container
 			h2.page-title Trending Projects
-			.swiper-container.swiper-wrapper.flex.flex--space-between
+			.swiper-container
+				.swiper-wrapper.flex.flex--space-between
 
-				mixin trendingProjects(image)
-					article.swiper-slide
-						img(src=image)
+					mixin trendingProjects(image)
+						article.swiper-slide
+							img(src=image)
 
-						div.bottom.flex.flex--space-around
-							.heart
-								include _heart.pug
-							.stats.flex.flex--space-between
-								.funded
-									p 54%
-									p funded
-								.pleged
-									p $190,420
-									p Pleged
-								.days
-									p 25
-									p Days Left
+							div.bottom.flex.flex--space-around
+								.heart
+									include _heart.pug
+								.stats.flex.flex--space-between
+									.funded
+										p 54%
+										p funded
+									.pleged
+										p $190,420
+										p Pleged
+									.days
+										p 25
+										p Days Left
 
-				+trendingProjects("assets/img/afterSchoolPrograms.png")
-				+trendingProjects("assets/img/localAnimalShelter.png")
-				+trendingProjects("assets/img/MusicInThePark.png")
-				+trendingProjects("assets/img/afterSchoolPrograms.png")
-				+trendingProjects("assets/img/localAnimalShelter.png")
-				+trendingProjects("assets/img/MusicInThePark.png")
+					+trendingProjects("assets/img/afterSchoolPrograms.png")
+					+trendingProjects("assets/img/localAnimalShelter.png")
+					+trendingProjects("assets/img/MusicInThePark.png")
+					+trendingProjects("assets/img/afterSchoolPrograms.png")
+					+trendingProjects("assets/img/localAnimalShelter.png")
+					+trendingProjects("assets/img/MusicInThePark.png")
 
 
 			//- .controls

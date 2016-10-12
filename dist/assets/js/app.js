@@ -1,1 +1,1 @@
-(function(){"use strict";function o(){var o=new Swiper(".swiper-container",{direction:"horizontal",loop:true,slideClass:".swiper-slide"})}document.onload=function(){console.log("test");o()}})();
+"use strict";var hrtcup={runSwiper:function(){var e=new Swiper(".swiper-container",{loop:true,slideClass:"swiper-slide",spaceBetween:10,centeredSlides:true})}};hrtcup.runSwiper();
