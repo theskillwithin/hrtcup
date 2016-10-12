@@ -17,8 +17,8 @@
   "scripts": {
     "gh-pages:": "",
     "pug": "pug src/index.pug --out dist/",
-    "uglifyVendorJs": "mkdir -p dist/assets/js && uglifyjs node_modules/jquery/dist/jquery.js node_modules/owl.carousel/dist/owl.carousel.js node_modules/swiper/dist/js/swiper.js --screw-ie8 -m -c -o dist/assets/js/vendor.js",
-    "vendorcss": "cp node_modules/swiper/dist/css/swiper.css src/assets/css/1-tools/_swiper.scss && cp node_modules/node-normalize-scss/_normalize.scss src/assets/css/1-tools/_normalize.scss  && cp node_modules/owl.carousel/dist/assets/owl.carousel.min.css src/assets/css/1-tools/_owl.carousel.min.scss",
+    "uglifyVendorJs": "mkdir -p dist/assets/js && uglifyjs node_modules/swiper/dist/js/swiper.js --screw-ie8 -m -o dist/assets/js/vendor.js",
+    "vendorcss": "cp node_modules/swiper/dist/css/swiper.css src/assets/css/1-tools/_swiper.scss && cp node_modules/node-normalize-scss/_normalize.scss src/assets/css/1-tools/_normalize.scss",
     "clean": "rm -f dist/{assets/css/*,js/*,assets/img/*}",
     "autoprefixer": "postcss -u autoprefixer -r dist/assets/css/*.css",
     "scss": "node-sass src/assets/css/main.sass dist/assets/css/main.css --indented-syntax --sourceMap true --outFile xmain.css",
