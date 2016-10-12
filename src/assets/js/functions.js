@@ -35,11 +35,13 @@
         navUl.classList.add('mobile')
         navUser.classList.add('mobile')
 
-        document.addEventListener('click', function () {
-          if (!headerNav.querySelector('ul').classList.contains('mobile')) {
+        document.addEventListener('click', function (event) {
+          if (!navUl.classList.contains('mobile')) {
             navUl.classList.toggle('mobile')
             navUser.classList.toggle('mobile')
             navHamburger.classList.toggle('mobile')
+            // event.stopPropagation()
+            console.log('fire')
           }
         })
 
@@ -48,13 +50,14 @@
         })
       }
 
-      navHamburger.addEventListener('click', function () {
+      navHamburger.addEventListener('click', function (event) {
         navUl.classList.toggle('mobile')
         navUser.classList.toggle('mobile')
         navHamburger.classList.toggle('mobile')
+        event.stopPropagation()
       })
     }
   }
-  hrtcup.runSwiper()
+  // hrtcup.runSwiper()
   hrtcup.mobileNav()
 
