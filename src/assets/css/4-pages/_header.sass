@@ -5,7 +5,7 @@ header.home
 header
 	width: 100%
 	height: $HeaderHeight
-	background-image: url("../img/header-banner.jpg")
+	background-image: url('../img/header-banner.jpg')
 	background-size: cover
 	position: relative
 	.logo
@@ -27,8 +27,8 @@ header
 			a
 				transition: opacity .25s
 		figure.item
-			margin: 0px
-			background-image: url("../img/header-banner.jpg")
+			margin: 0
+			background-image: url('../img/header-banner.jpg')
 			background-size: cover
 		.controls
 			bottom: -45px
@@ -42,7 +42,7 @@ header
 					color: darken($greyText, 20%)
 	///  END SLIDER use (3-modules/_gallery-controller.sass) /////
 
-	.header // [.flex.flex--justify-content.flex--align-items] //
+	//.header // [.flex.flex--justify-content.flex--align-items] //
 	.top
 		background-color: rgba(50, 50, 50, .749)
 		position: absolute
@@ -63,13 +63,13 @@ header
 		align-items: center
 		span, span:before, span:after
 			+transition(all 300ms ease)
-			content: ""
+			content: ''
 			display: block
 			height: 2px
 			width: 35px
 			background: white
 			position: relative
-			transfor-origin: center
+			transform-origin: center
 		span:before
 			top: 10px
 		span:after
@@ -79,13 +79,13 @@ header
 				visibility: hidden
 			span:after
 				transform: rotate(45deg)
-				transfor-origin: center
+				transform-origin: center
 				top: -3px
 				visibility: visible
 			span:before
 				transform: rotate(-45deg)
-				transfor-origin: center
-				top: 0px
+				transform-origin: center
+				top: 0
 				visibility: visible
 	nav  ///NAV  [.flex.flex--direction]   ///
 		height: auto
@@ -93,10 +93,10 @@ header
 
 		ul  // [.flex.flex--space-between] //
 			list-style-type: none
-			margin: 0px
+			margin: 0
 			width: 400px
 			margin: 0 15px
-			padding-left: 0px
+			padding-left: 0
 
 		a 
 			color: white

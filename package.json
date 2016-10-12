@@ -2,14 +2,11 @@
   "name": "heartcup",
   "version": "1.2.0",
   "description": "hearcup.",
-  "keywords": [
-    "npm",
-    "scripts",
-    "npm scripts",
-    "watch",
-    "minify",
-    "compress"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:theskillwithin/hrtcup.git"
+  },
+  "license": "",
   "eslintConfig": {
     "env": {
       "browser": true,
@@ -64,6 +61,7 @@
     "pug": "^2.0.0-beta6",
     "svg-sprite-generator": "0.0.7",
     "svgo": "^0.7.0",
+    "swiper": "^3.3.1",
     "uglify-js": "^2.7.3"
   }
 }
