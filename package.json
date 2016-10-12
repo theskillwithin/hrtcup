@@ -23,7 +23,7 @@
     "autoprefixer": "postcss -u autoprefixer -r dist/assets/css/*.css",
     "scss": "node-sass src/assets/css/main.sass dist/assets/css/main.css --indented-syntax --sourceMap true --outFile xmain.css",
     "lint": "eslint src/assets/js --fix",
-    "uglify": "mkdir -p dist/assets/js && uglifyjs src/assets/js/*.js --screw-ie8 -m -o dist/assets/js/app.js && uglifyjs src/assets/js/*.js --screw-ie8 -m -c -o dist/assets/js/app.min.js",
+    "uglify": "mkdir -p dist/assets/js && uglifyjs src/assets/js/*.js --screw-ie8 -o dist/assets/js/app.js --source-map dist/assets/js/app.js.map && uglifyjs src/assets/js/*.js --screw-ie8 --source-map dist/assets/js/app.min.js.map -m -c -o dist/assets/js/app.min.js ",
     "imagemin": "imagemin src/assets/img/* -o dist/assets/img",
     "icons": "svgo -f src/assets/img/icons && mkdir -p dist/assets/img && svg-sprite-generate -d src/assets/img/icons -o dist/assets/img/icons.svg",
     "serve": "browser-sync start --c bs-config.js --server './dist' --files './dist'",

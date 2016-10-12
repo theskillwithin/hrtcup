@@ -15,8 +15,8 @@
     },
     mobileNav: function () {
       var mq = window.matchMedia('(max-width: 890px)'),
-        header = document.querySelectorAll('header'),
-        headerNav = header.querySelector('nav') !== null,
+        header = document.querySelector('header'),
+        headerNav = header.querySelector('nav'),
         hamburger
 
       if (mq.matches) {
@@ -34,7 +34,7 @@
                 .add(header.querySelector('.hamburger'))
                     .add('mobile')
 
-        $(document).on('click', function () {
+        $(document).addEventListener('click', function () {
           if (!headerNav.querySelector('ul').contains('mobile')) hamburger()
         })
 
@@ -43,7 +43,7 @@
         })
       }
 
-      header.querySelector('.hamburger').on('click', hamburger = function () {
+      header.querySelector('.hamburger').addEventListener('click', hamburger = function () {
         headerNav.querySelector('ul, .user')
             .add(header.querySelector('.hamburger'))
                 .add('mobile')
