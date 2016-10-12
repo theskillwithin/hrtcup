@@ -21,7 +21,6 @@
         navUser = headerNav.querySelector('.user'),
         navHamburger = header.querySelector('.hamburger'),
         top = document.querySelector('header .top')
-      console.log(top)
       if (mq.matches) {
         headerFire()
       }
@@ -44,7 +43,6 @@
             navUl.classList.toggle('mobile')
             navUser.classList.toggle('mobile')
             navHamburger.classList.toggle('mobile')
-            console.log('fire')
           }
         })
       }
