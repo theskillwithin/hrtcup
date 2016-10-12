@@ -19,8 +19,9 @@
         headerNav = header.querySelector('nav'),
         navUl = headerNav.querySelector('ul'),
         navUser = headerNav.querySelector('.user'),
-        navHamburger = header.querySelector('.hamburger')
-
+        navHamburger = header.querySelector('.hamburger'),
+        top = document.querySelector('header .top')
+      console.log(top)
       if (mq.matches) {
         headerFire()
       }
@@ -36,17 +37,15 @@
         navUser.classList.add('mobile')
 
         document.addEventListener('click', function (event) {
+          console.log(event.target)
+          if (event.target === top) return
+
           if (!navUl.classList.contains('mobile')) {
             navUl.classList.toggle('mobile')
             navUser.classList.toggle('mobile')
             navHamburger.classList.toggle('mobile')
-            // event.stopPropagation()
             console.log('fire')
           }
-        })
-
-        header.querySelector('.top').click(function () {
-          return false
         })
       }
 
@@ -58,6 +57,6 @@
       })
     }
   }
-  // hrtcup.runSwiper()
+  hrtcup.runSwiper()
   hrtcup.mobileNav()
 
