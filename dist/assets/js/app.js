@@ -1,1 +1,1 @@
-"use strict";var hrtcup={runSwiper:function(){var e=new Swiper(".swiper-container",{loop:true,slideClass:"swiper-slide",spaceBetween:10,centeredSlides:true})}};hrtcup.runSwiper();
+"use strict";var hrtcup={runSwiper:function(){var e=new Swiper(".swiper-container",{loop:true,slideClass:"swiper-slide",spaceBetween:10,centeredSlides:true,pagination:".swiper-pagination",slidesPerView:"auto",nextButton:".swiper-button-next",prevButton:".swiper-button-prev"})}};hrtcup.runSwiper();

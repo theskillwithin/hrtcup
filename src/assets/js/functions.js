@@ -6,7 +6,11 @@
         loop: true,
         slideClass: 'swiper-slide',
         spaceBetween: 10,
-        centeredSlides: true
+        centeredSlides: true,
+        pagination: '.swiper-pagination',
+        slidesPerView: 'auto',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev'
       })
     }
   }
