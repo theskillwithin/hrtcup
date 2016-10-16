@@ -1628,8 +1628,6 @@ body {
     max-width: 100%; }
   .page-home article {
     margin-bottom: 50px; }
-    .page-home article:last-child {
-      margin-bottom: 0; }
   .page-home section#howHeartcupWorks figure {
     margin: 10px; }
     .page-home section#howHeartcupWorks figure svg {
