@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "gh-pages:": "",
+    "gh-pages": "",
     "pug": "pug src/index.pug --out dist/",
     "uglifyVendorJs": "mkdir -p dist/assets/js && uglifyjs node_modules/swiper/dist/js/swiper.js --screw-ie8 -m -c -o dist/assets/js/vendor.js",
     "vendorcss": "cp node_modules/swiper/dist/css/swiper.css src/assets/css/1-tools/_swiper.scss && cp node_modules/node-normalize-scss/_normalize.scss src/assets/css/1-tools/_normalize.scss",
