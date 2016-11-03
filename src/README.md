@@ -1,12 +1,11 @@
 # HeartCup
 
-Developed by Brandastic.com
 
 ***
 
 ## Frontend
 
-contributors:  Austin, Nick
+contributors:  Austin
 
 HTML5, CSS3
 
@@ -138,7 +137,6 @@ AngularJS?
 
 ### Backend
 
-Contributors: Matt
 
 Laravel
 
