@@ -16,7 +16,7 @@
   },
   "scripts": {
     "gh-pages": "",
-    "babel": "browserify src/assets/js/functions.js -o dist/assets/js/app.js -t [ babelify --presets [ es2015 ] ]",
+    "babel": "browserify src/assets/js/functions.js -d -o dist/assets/js/app.js -t [ babelify --presets [ es2015 ] ]",
     "pug": "pug src/index.pug --out dist/",
     "VendorJs": "cp node_modules/swiper/dist/js/swiper.js src/assets/js/swiper.js",
     "vendorcss": "cp node_modules/swiper/dist/css/swiper.css src/assets/css/1-tools/_swiper.scss && cp node_modules/node-normalize-scss/_normalize.scss src/assets/css/1-tools/_normalize.scss",
