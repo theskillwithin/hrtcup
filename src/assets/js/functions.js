@@ -38,7 +38,7 @@ const hrtcup = {
         // console.log(event.currentTarget)
         // if (event.target === top) return
         // if (event.target === top.querySelector('.container')) return
-        if (!event.target.contains(top)) return
+        if (!event.target.contains(header)) return
 
         if (!navUl.classList.contains('mobile')) {
           navUl.classList.toggle('mobile')
